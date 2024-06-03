@@ -24,6 +24,7 @@ pipeline {
         stage('Initialize Terraform') {
             steps {
                 dir("${env.TERRAFORM_DIR}") {
+                    // Ensure backend configuration is initialized
                     sh 'terraform init'
                 }
             }

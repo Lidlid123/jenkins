@@ -3,6 +3,15 @@ provider "google" {
   region  = "me-west1"
 }
 
+
+terraform {
+  backend "gcs" {
+    bucket = "terraform-koresh-state"
+    prefix = "terraform/state"
+  }
+}
+
+
 resource "google_compute_instance" "custom_hostname_instance" {
   name         = "jenkins-deployed-terraform"
   machine_type = "e2-medium"
