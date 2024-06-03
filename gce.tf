@@ -6,7 +6,7 @@ provider "google" {
 resource "google_compute_instance" "custom_hostname_instance" {
   name         = "jenkins-deployed-terraform"
   machine_type = "e2-medium"
-  zone         = "me-west1"
+  zone         = "me-west1-a"
 
   # Set a custom hostname below
   hostname = "kikosolutions.com"
